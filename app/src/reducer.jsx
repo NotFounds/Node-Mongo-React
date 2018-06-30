@@ -1,7 +1,7 @@
 import { INCREMENT, FETCH_MESSAGES, FETCH_MESSAGES_SUCCESS } from './actions';
 
 const initialState = {
-  messages: ['aaa', 'bbb'],
+  messages: [{text: 'aaa'}, {text: 'bbb'}],
   value: 0,
   isFetching: false,
 };

@@ -9,7 +9,7 @@ router.get('/messages', function(req, res, next) {
       res.send(err);
       return;
     }
-    res.json(message);
+    res.json(docs);
   })
 });
 

@@ -7,11 +7,11 @@ const mapStateToProps = (state) => state;
 
 const mapDispatchToProps = (dispatch) => ({
   handleClick: () => { dispatch(increment()); },
-  fetchMessages: () => { fetchMessages(); }
+  fetchMessages: () => { dispatch(fetchMessages()); }
 });
 
 class App extends React.Component {
-  componentDidMount(props) {
+  componentDidMount() {
     this.props.fetchMessages();
   }
 
@@ -20,7 +20,7 @@ class App extends React.Component {
       <div>
         <h3>Messages</h3>
         <ul>
-          {this.props.messages.map(x => <li key={x}>{x}</li>)}
+          {this.props.messages.map(x => <li key={x.text}>{x.text}</li>)}
         </ul>
         <h3>Incriment</h3>
         <p>{this.props.value}</p>
